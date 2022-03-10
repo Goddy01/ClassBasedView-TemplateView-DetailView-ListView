@@ -1,3 +1,4 @@
+from dataclasses import fields
 from django.shortcuts import render
 from django.views.generic import (View, TemplateView, ListView, DetailView,
                                     CreateView, UpdateView, DeleteView)
@@ -46,4 +47,9 @@ class SchoolDetailView(DetailView):
 class SchoolCreateView(CreateView):
     '''Create an new instance of school from the School Model in models.py'''
     fields = ('name', 'principal', 'location')
+    model = models.School
+
+class SchoolUpdateView(UpdateView):
+    '''Updates the specified fields'''
+    fields = ('name', 'principal')
     model = models.School
