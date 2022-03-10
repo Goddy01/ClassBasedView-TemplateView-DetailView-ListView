@@ -1,0 +1,31 @@
+{% extends "basic_app/basic_app_base.html" %}
+{% block title %}Create New School{% endblock %}
+
+{% block body_block %}
+<h1>
+    <!-- Checks if the instance of the pk exists. If it does not exist, it creates a new scholl. If it exists, it updates the existing school. -->
+    {% if not form.instance.pk %}
+    Create New School
+    {% else %}
+    Update Existing School
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-group">
+      <!-- <label for="schoolName">Name: </label>
+      <input type="text" class="form-control" id="schoolName" placeholder="Enter school name">
+    </div>
+    <div class="form-group">
+      <label for="principalName">Principal: </label>
+      <input type="text" class="form-control" id="principalName" placeholder="Enter principal's name">
+    </div>
+    <div class="form-check">
+      <label for="location">Location: </label>
+      <input type="text" class="form-control" id="location" placeholder="Enter school's location">
+    </div> -->
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form>
+{% endblock %}
