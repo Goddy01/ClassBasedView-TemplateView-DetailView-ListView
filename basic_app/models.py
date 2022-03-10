@@ -12,7 +12,7 @@ class School(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        '''Returns the school detail of a specific school.'''
+        '''Returns the details of a specific school.'''
         return reverse("basic_app:school_detail", kwargs={'pk':self.pk})
 
 class Student(models.Model):
