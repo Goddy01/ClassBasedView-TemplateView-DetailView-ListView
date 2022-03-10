@@ -1,0 +1,11 @@
+{% extends "basic_app/basic_app_base.html" %}
+{% block title %}List of Schools{% endblock %}
+
+{% block body_block %}
+    <h3>A List of schools owned by The Adiguns</h3>
+    <ol>
+    {% for school in schools %}
+        <h5><li><a href="{{school.id}}">{{ school.name }}</a></li></h5>
+    {% endfor %}
+    </ol>
+{% endblock%}
