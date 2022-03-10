@@ -1,5 +1,6 @@
-from dataclasses import fields
+from re import template
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import (View, TemplateView, ListView, DetailView,
                                     CreateView, UpdateView, DeleteView)
 from django.http import HttpResponse
@@ -50,6 +51,12 @@ class SchoolCreateView(CreateView):
     model = models.School
 
 class SchoolUpdateView(UpdateView):
-    '''Updates the specified fields'''
+    '''Updates the specified fields of a specific school'''
     fields = ('name', 'principal')
     model = models.School
+
+class SchoolDeleteView(DeleteView):
+    '''Deletes all the fields of a specfici'''
+    model = models.School
+    success_url = reverse_lazy('basic_app:school_list')
+    # template_name = 'basic_app/school_details.html'

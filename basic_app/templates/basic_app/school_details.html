@@ -14,8 +14,10 @@
             <p>{{ student.name }}, who is {{ student.age }} years old</p>
         {% endfor %}
 
-        <div class="container">
-            <a class="btn btn-primary mt-5" href="{% url 'basic_app:update_school' pk=school_detail.pk %}">Update</a>
+        <div class="container mt-5">
+                <a class="btn btn-primary" href="{% url 'basic_app:update_school' pk=school_detail.pk %}">
+                    Update
+                </a>
         </div>
     </div>
 {% endblock %}
