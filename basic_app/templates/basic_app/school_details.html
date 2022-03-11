@@ -18,6 +18,9 @@
                 <a class="btn btn-primary" href="{% url 'basic_app:update_school' pk=school_detail.pk %}">
                     Update
                 </a>
+                <a class="btn btn-danger" href="{% url 'basic_app:delete_school' pk=school_detail.pk %}">
+                    Delete
+                </a>
         </div>
     </div>
 {% endblock %}
