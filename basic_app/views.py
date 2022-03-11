@@ -51,12 +51,12 @@ class SchoolCreateView(CreateView):
     model = models.School
 
 class SchoolUpdateView(UpdateView):
-    '''Updates the specified fields of a specific school'''
+    '''View for updating the fields of a school'''
     fields = ('name', 'principal')
     model = models.School
 
 class SchoolDeleteView(DeleteView):
-    '''Deletes all the fields of a specfici'''
+    '''View for deleting the fields of a school'''
     model = models.School
     success_url = reverse_lazy('basic_app:school_list')
     # template_name = 'basic_app/school_details.html'
