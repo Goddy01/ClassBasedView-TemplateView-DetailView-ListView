@@ -46,7 +46,7 @@ class SchoolDetailView(DetailView):
     template_name = 'basic_app/school_details.html'
 
 class SchoolCreateView(CreateView):
-    '''Create an new instance of school from the School Model in models.py'''
+    '''Create a new instance of school from the School Model in models.py'''
     fields = ('name', 'principal', 'location')
     model = models.School
 
